@@ -1,0 +1,16 @@
+platform :ios, '11.0'
+
+use_frameworks!
+
+def default_pods
+
+end
+
+target 'Varejando' do
+    default_pods
+end
+
+target 'VarejandoTests' do
+    pod 'Quick'
+    pod 'Nimble'
+end

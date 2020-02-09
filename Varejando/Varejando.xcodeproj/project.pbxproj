@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09D66B5B04141487B47E7CCA /* Pods_Varejando.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B0047C2AF228D5F7BEE7883 /* Pods_Varejando.framework */; };
 		69AB5C0E23EFA6EC003050DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69AB5C0D23EFA6EC003050DD /* AppDelegate.swift */; };
 		69AB5C1023EFA6EC003050DD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69AB5C0F23EFA6EC003050DD /* SceneDelegate.swift */; };
 		69AB5C1223EFA6EC003050DD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69AB5C1123EFA6EC003050DD /* ViewController.swift */; };
@@ -15,6 +16,7 @@
 		69AB5C1A23EFA6EE003050DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69AB5C1823EFA6EE003050DD /* LaunchScreen.storyboard */; };
 		69AB5C2523EFA6EE003050DD /* VarejandoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69AB5C2423EFA6EE003050DD /* VarejandoTests.swift */; };
 		69AB5C3023EFA6EE003050DD /* VarejandoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69AB5C2F23EFA6EE003050DD /* VarejandoUITests.swift */; };
+		C6DD464BD2AD59695BFD7126 /* Pods_VarejandoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACAC112B685FB70502C32B53 /* Pods_VarejandoTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		54EF887616E7BD41A9356578 /* Pods-VarejandoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VarejandoTests.debug.xcconfig"; path = "Target Support Files/Pods-VarejandoTests/Pods-VarejandoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		674C074A1C474BA85BD74E18 /* Pods-Varejando.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Varejando.debug.xcconfig"; path = "Target Support Files/Pods-Varejando/Pods-Varejando.debug.xcconfig"; sourceTree = "<group>"; };
 		69AB5C0A23EFA6EC003050DD /* Varejando.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Varejando.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69AB5C0D23EFA6EC003050DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		69AB5C0F23EFA6EC003050DD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +53,10 @@
 		69AB5C2B23EFA6EE003050DD /* VarejandoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VarejandoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		69AB5C2F23EFA6EE003050DD /* VarejandoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VarejandoUITests.swift; sourceTree = "<group>"; };
 		69AB5C3123EFA6EE003050DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7B0047C2AF228D5F7BEE7883 /* Pods_Varejando.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Varejando.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D6F19DF2E5F85FCAFE075A2 /* Pods-VarejandoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VarejandoTests.release.xcconfig"; path = "Target Support Files/Pods-VarejandoTests/Pods-VarejandoTests.release.xcconfig"; sourceTree = "<group>"; };
+		ACAC112B685FB70502C32B53 /* Pods_VarejandoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VarejandoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4B0010AB2FF45155F8BF7DE /* Pods-Varejando.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Varejando.release.xcconfig"; path = "Target Support Files/Pods-Varejando/Pods-Varejando.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09D66B5B04141487B47E7CCA /* Pods_Varejando.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6DD464BD2AD59695BFD7126 /* Pods_VarejandoTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +86,58 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B3B134C3D0D4DAF9FA0C8C4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7B0047C2AF228D5F7BEE7883 /* Pods_Varejando.framework */,
+				ACAC112B685FB70502C32B53 /* Pods_VarejandoTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6938353623EFAA6E00012DEF /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				6938353823EFAA9C00012DEF /* Storyboards */,
+				6938353723EFAA8200012DEF /* controllers */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		6938353723EFAA8200012DEF /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				69AB5C1123EFA6EC003050DD /* ViewController.swift */,
+			);
+			path = controllers;
+			sourceTree = "<group>";
+		};
+		6938353823EFAA9C00012DEF /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				69AB5C1823EFA6EE003050DD /* LaunchScreen.storyboard */,
+				69AB5C1323EFA6EC003050DD /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		6938353923EFAAB100012DEF /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				69AB5C0D23EFA6EC003050DD /* AppDelegate.swift */,
+				69AB5C0F23EFA6EC003050DD /* SceneDelegate.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		6938353A23EFAAC900012DEF /* SupportSettings */ = {
+			isa = PBXGroup;
+			children = (
+				69AB5C1B23EFA6EE003050DD /* Info.plist */,
+			);
+			path = SupportSettings;
+			sourceTree = "<group>";
+		};
 		69AB5C0123EFA6EC003050DD = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +145,8 @@
 				69AB5C2323EFA6EE003050DD /* VarejandoTests */,
 				69AB5C2E23EFA6EE003050DD /* VarejandoUITests */,
 				69AB5C0B23EFA6EC003050DD /* Products */,
+				FB2F711E10F3691ACE19D6CC /* Pods */,
+				0B3B134C3D0D4DAF9FA0C8C4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,13 +163,10 @@
 		69AB5C0C23EFA6EC003050DD /* Varejando */ = {
 			isa = PBXGroup;
 			children = (
-				69AB5C0D23EFA6EC003050DD /* AppDelegate.swift */,
-				69AB5C0F23EFA6EC003050DD /* SceneDelegate.swift */,
-				69AB5C1123EFA6EC003050DD /* ViewController.swift */,
-				69AB5C1323EFA6EC003050DD /* Main.storyboard */,
+				6938353A23EFAAC900012DEF /* SupportSettings */,
+				6938353923EFAAB100012DEF /* Core */,
+				6938353623EFAA6E00012DEF /* UI */,
 				69AB5C1623EFA6EE003050DD /* Assets.xcassets */,
-				69AB5C1823EFA6EE003050DD /* LaunchScreen.storyboard */,
-				69AB5C1B23EFA6EE003050DD /* Info.plist */,
 			);
 			path = Varejando;
 			sourceTree = "<group>";
@@ -128,6 +189,17 @@
 			path = VarejandoUITests;
 			sourceTree = "<group>";
 		};
+		FB2F711E10F3691ACE19D6CC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				674C074A1C474BA85BD74E18 /* Pods-Varejando.debug.xcconfig */,
+				E4B0010AB2FF45155F8BF7DE /* Pods-Varejando.release.xcconfig */,
+				54EF887616E7BD41A9356578 /* Pods-VarejandoTests.debug.xcconfig */,
+				9D6F19DF2E5F85FCAFE075A2 /* Pods-VarejandoTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,6 +207,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 69AB5C3423EFA6EE003050DD /* Build configuration list for PBXNativeTarget "Varejando" */;
 			buildPhases = (
+				FA8CCCEDDEE067A8343281B1 /* [CP] Check Pods Manifest.lock */,
 				69AB5C0623EFA6EC003050DD /* Sources */,
 				69AB5C0723EFA6EC003050DD /* Frameworks */,
 				69AB5C0823EFA6EC003050DD /* Resources */,
@@ -152,9 +225,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 69AB5C3723EFA6EE003050DD /* Build configuration list for PBXNativeTarget "VarejandoTests" */;
 			buildPhases = (
+				4C520FCDE17488126B2B2003 /* [CP] Check Pods Manifest.lock */,
 				69AB5C1C23EFA6EE003050DD /* Sources */,
 				69AB5C1D23EFA6EE003050DD /* Frameworks */,
 				69AB5C1E23EFA6EE003050DD /* Resources */,
+				5F6FD6941A3A9540853C3488 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -253,6 +328,70 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4C520FCDE17488126B2B2003 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VarejandoTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5F6FD6941A3A9540853C3488 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VarejandoTests/Pods-VarejandoTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VarejandoTests/Pods-VarejandoTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VarejandoTests/Pods-VarejandoTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FA8CCCEDDEE067A8343281B1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Varejando-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		69AB5C0623EFA6EC003050DD /* Sources */ = {
@@ -432,7 +571,9 @@
 		};
 		69AB5C3523EFA6EE003050DD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 674C074A1C474BA85BD74E18 /* Pods-Varejando.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AVY6X5Z59L;
@@ -450,7 +591,9 @@
 		};
 		69AB5C3623EFA6EE003050DD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4B0010AB2FF45155F8BF7DE /* Pods-Varejando.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AVY6X5Z59L;
@@ -468,6 +611,7 @@
 		};
 		69AB5C3823EFA6EE003050DD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 54EF887616E7BD41A9356578 /* Pods-VarejandoTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -490,6 +634,7 @@
 		};
 		69AB5C3923EFA6EE003050DD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9D6F19DF2E5F85FCAFE075A2 /* Pods-VarejandoTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
