@@ -20,6 +20,20 @@
                ReferencedContainer = "container:Varejando.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "69AB5C1F23EFA6EE003050DD"
+               BuildableName = "VarejandoTests.xctest"
+               BlueprintName = "VarejandoTests"
+               ReferencedContainer = "container:Varejando.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
