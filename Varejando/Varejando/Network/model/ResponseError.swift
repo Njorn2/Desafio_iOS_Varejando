@@ -8,7 +8,13 @@
 
 import Foundation
 
-
+/*!
+ @brief Struct de erro, criada para manipular os erros de response dos requests.
+ @discussion Quando algum erro ocorrer antes, durante ou depois de um request, retornaremos este objeto para o usuário.
+  
+  @field Message: mensagem de erro para o usuário.
+  @field Error: o erro retornado pelo response ou por algum try/catch.
+ */
 public struct ResponseError {
     var message: String?
     var error: Error?
