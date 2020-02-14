@@ -11,55 +11,78 @@ import Quick
 import Nimble
 @testable import Varejando
 
+struct RouterMock: EndPoint {
+    var url = "https://api.tibiadata.com/v2"
+    var urn = "worlds.json"
+    
+    var baseURL: URL {
+        guard let mURL = URL(string: url) else {
+            fatalError("Invalid URL")
+        }
+        return mURL
+    }
+    
+    var path: String {
+        return urn
+    }
+    
+    var task: HTTPTask {
+        return .request
+    }
+    
+    var httpMethod: HTTPMethod {
+        return .GET
+    }
+}
+
 public class RequestSpec: QuickSpec {
     override public func spec() {
         let request = HTTPRequest.instance
+        var router = RouterMock()
         
         describe("The Get response from an API") {
             context("Get Methods.") {
-                it("URL Broken.") {
-                    
-                    waitUntil(timeout: 30) { done in
-                        request.request(url: "url wrong.", method: HTTPMethod.GET, parameters: nil, completion: {(response, error) in
-                            expect(error).toNot(beNil())
-                            done()
-                        })
-                    }
-                }
-                it("Response Error.") {
-                    
-                    waitUntil(timeout: 30) { done in
-                        request.request(url: "https://api.tibiadata.com/v2/worlds", method: HTTPMethod.GET, parameters: nil, completion: {(response, error) in
-                            DispatchQueue.main.sync {
-                                expect(error).toNot(beNil())
-                                done()
-                            }
-                        })
-                    }
-                }
                 it("Response Success. Error must be Nil") {
                     
                     waitUntil(timeout: 30) { done in
-                        request.request(url: "https://api.tibiadata.com/v2/worlds.json", method: HTTPMethod.GET, parameters: nil, completion: {(response, error) in
+                        request.request(route: router, completion: { data, response, error in
                             expect(error).to(beNil())
                             done()
                         })
                     }
                 }
-                it("Response Success. Response must be Data") {
+                it("Response Success. Response Data must not be Nil") {
                     
                     waitUntil(timeout: 30) { done in
-                        request.request(url: "https://api.tibiadata.com/v2/worlds.json", method: HTTPMethod.GET, parameters: nil,  completion: {(response, error) in
-                            expect(response).to(beAKindOf(Data.self))
+                        request.request(route: router, completion: { data, response, error in
+                            expect(data).toNot(beNil())
                             done()
                         })
                     }
                 }
-                it("Response Success. Response must be a Imagem (UIImage)") {
+                it("Response Success. Response must not be a Imagem") {
                     
                     waitUntil(timeout: 30) { done in
-                        request.request(url: "https://tibiawiki.com.br/images/4/4a/Angry_Demon.gif", method: HTTPMethod.GET, parameters: nil,  completion: {(response, error) in
-                            expect(response).to(beAKindOf(UIImage.self))
+                        request.request(route: router, completion: { data, response, error in
+                            var isImage = false
+                            if let mimeType = response?.mimeType, mimeType.hasPrefix("image") {
+                                isImage = true
+                            }
+                            expect(isImage).toNot(beTrue())
+                            done()
+                        })
+                    }
+                }
+                it("Response Success. Response must be a Imagem") {
+                    router.url = "https://www.tibiawiki.com.br/"
+                    router.urn = "images/7/75/Demon.gif"
+                    waitUntil(timeout: 30) { done in
+                        request.request(route: router, completion: { data, response, error in
+                            var isImage = false
+                            if let mimeType = response?.mimeType, mimeType.hasPrefix("image") {
+                                isImage = true
+                            }
+                            expect(isImage).to(beTrue())
                             done()
                         })
                     }
