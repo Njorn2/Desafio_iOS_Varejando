@@ -46,11 +46,11 @@ public class RequestSpec: QuickSpec {
                         })
                     }
                 }
-                it("Response Success. Response must be Dictionary<String, Any>") {
+                it("Response Success. Response must be Data") {
                     
                     waitUntil(timeout: 30) { done in
                         request.request(url: "https://api.tibiadata.com/v2/worlds.json", method: HTTPMethod.GET, parameters: nil,  completion: {(response, error) in
-                            expect(response).to(beAKindOf(Dictionary<String, Any>.self))
+                            expect(response).to(beAKindOf(Data.self))
                             done()
                         })
                     }

@@ -17,7 +17,7 @@ import UIKit
  @field Any? - Objeto retornado pela requisição.
  @field ResponseError? - Error retornado pela requisção.
  */
-typealias HttpRequestReponse = ((Any?, ResponseError?) -> Void)
+typealias HttpRequestReponse = ((Any?, ResponseError?) throws -> Void)
 
 /*!
  @class HTTPRequest
@@ -47,7 +47,7 @@ public class HTTPRequest {
      */
     func request(url: String, method: HTTPMethod, parameters: [String: Any]?, completion: @escaping HttpRequestReponse) {
         guard var request = self.buildRequest(url: url) else {
-            completion(nil, ResponseError(message: "URL inválida! URL: \(url)", error: nil))
+            try? completion(nil, ResponseError(message: "URL inválida! URL: \(url)", error: nil))
             return
         }
         request.httpMethod = method.rawValue
@@ -85,16 +85,16 @@ public class HTTPRequest {
                 let mimeType = response?.mimeType,
                 let data = data, error == nil
                 else {
-                    completion(nil, ResponseError(message: "Aconteceu algo errado durante o response.", error: error))
+                    try? completion(nil, ResponseError(message: "Aconteceu algo errado durante o response.", error: error))
                     return
             }
             DispatchQueue.main.async() {
                 if mimeType.hasPrefix("image") {
                     let image = UIImage(data: data)
-                    completion(image, nil)
+                    try? completion(image, nil)
                 }else {
-                    let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
-                    completion(json, nil)
+//                    let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+                    try? completion(data, nil)
                 }
             }
         }.resume()
