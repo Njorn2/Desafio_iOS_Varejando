@@ -20,17 +20,19 @@ class HTTPLog {
         defer {
             print(end)
         }
-        
-        if let body = request.httpBody {
+
+        if let body = data {
             let strData = NSString(data: body, encoding: String.Encoding.utf8.rawValue) as String? ?? ""
             outPut += jump + strData
         }
         outPut += jump
+        
         if let resp = response as? HTTPURLResponse {
             outPut += HTTPStatusCode
             outPut += String(describing: resp.statusCode)
         }
         outPut += jump
+        
         print(outPut)
     }
 }

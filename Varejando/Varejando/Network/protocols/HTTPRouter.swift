@@ -8,7 +8,7 @@
 
 import Foundation
 
-public typealias HTTPRouterCompletion = (_ data: Data?, _ response: URLResponse?, _ error: Error?) -> Void
+public typealias HTTPRouterCompletion = (_ data: Data?, _ response: URLResponse?, _ error: Error?) throws -> Void
 
 protocol HTTPRouter: AnyObject {
     func request(route: EndPoint, completion: @escaping HTTPRouterCompletion)

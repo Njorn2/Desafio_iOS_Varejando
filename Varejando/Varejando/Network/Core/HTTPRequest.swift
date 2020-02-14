@@ -10,23 +10,11 @@ import Foundation
 import UIKit
 
 /*!
- @typealias HttpRequestReponse
- @brief padrão de closure das requisições.
- @description Ao realizar um requisição, será executado retornando para o usuário os objetos ou erros retornandos durante ou após seu fim.
- 
- @field Any? - Objeto retornado pela requisição.
- @field ResponseError? - Error retornado pela requisção.
- */
-typealias HttpRequestReponse = ((Data?, URLResponse?, Error?) -> Void)
-
-/*!
  @class HTTPRequest
  @brief Classe designada para requisicóes WEB.
  @description Designada para consumir APIs ou endpoints retornando objetos, arquivos, imagens ou HTMLs.
  */
 class HTTPRequest: NSObject, HTTPRouter {
-    
-    
     
     /*! @field instance - Singleton */
     static let instance = HTTPRequest()
@@ -34,23 +22,27 @@ class HTTPRequest: NSObject, HTTPRouter {
     private var task: URLSessionTask?
     
     private override init(){}
-
-    func request(route: EndPoint, completion: @escaping HttpRequestReponse) {
-//        let session = URLSession(configuration: URLSessionConfiguration.default)
-        
+    
+    func request(route: EndPoint, completion: @escaping HTTPRouterCompletion) {
         do {
             let request = try self.buildRequest(route: route)
             task = URLSession.shared.dataTask(with: request) { data, response, error in
                 HTTPLog.log(with: request, response: response, data: data)
+                guard let httpResponse = response else {
+                    fatalError(HTTPResponse.failed.localizedDescription)
+                }
+                let responseStatus = HTTPResponseManager.handleHttpResponse(httpResponse)
                 
-                DispatchQueue.main.async {
-                    completion(data, response, error)
+                if responseStatus == .success {
+                    DispatchQueue.main.async {
+                        try? completion(data, response, error)
+                    }
                 }
             }
             task?.resume()
         } catch {
             DispatchQueue.main.async {
-                completion(nil, nil, error)
+                try? completion(nil, nil, error)
             }
         }
     }
@@ -85,40 +77,6 @@ class HTTPRequest: NSObject, HTTPRouter {
             throw error
         }
         return request
-    }
-    
-    /*!
-     @method private execute
-     @brief Executa a requisição.
-     @description Executa a requisição utlizado o URLRequest criado acima
-     @field request - Objeto necessário para realização do request, contendo headers, body e URL necessário.
-     @field completion - closure executdo no fim da requisição.
-     */
-    public func execute(route: EndPoint, completion: @escaping HttpRequestReponse) {
-
-//        do {
-//            let request = try self.buildRequest(route: route)
-//            URLSession.shared.dataTask(with: request) { data, response, error in
-//                guard
-//                    let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
-//                    let mimeType = response?.mimeType,
-//                    let data = data, error == nil
-//                    else { return }
-//                DispatchQueue.main.async() {
-//                    if mimeType.hasPrefix("image") {
-//                        let image = UIImage(data: data)
-//                        completion(image, nil)
-//                    }else {
-//                        //                    let json = try? JSONSerialization.jsonObject(with: data, options: [])
-//                        completion(data, nil)
-//                    }
-//                }
-//            }.resume()
-//        } catch {
-//            DispatchQueue.main.async {
-//                completion(nil, nil, error)
-//            }
-//        }
     }
     
     private func addParameters(bodyParameters: Parameters?, urlParameters: Parameters?, request: inout URLRequest) throws {
