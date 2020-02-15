@@ -43,14 +43,14 @@ class MockyAPI {
     var router = Router()
     var decoder: JSONDecoder?
     
-    private init(){
+    private init() {
         decoder = JSONDecoder()
         decoder?.keyDecodingStrategy = .convertFromSnakeCase
     }
     
     func getListProducts(completion: @escaping ProductsListHandler) {
         router.path = Paths.list.rawValue
-        HTTPRequest.instance.request(route: router, completion: { data, response, error in
+        HTTPRequest.instance.request(route: router, completion: { data, _, _ in
             if let decode = self.decoder, let mData = data {
                 let products = try decode.decode(ProductsAPIModel.self, from: mData)
                 completion(products)
@@ -60,7 +60,7 @@ class MockyAPI {
     
     func getProductDetail(completion: @escaping ProductDetailHandler) {
         router.path = Paths.detail.rawValue
-        HTTPRequest.instance.request(route: router, completion: { data, response, error in
+        HTTPRequest.instance.request(route: router, completion: { data, _, _ in
             if let decode = self.decoder, let mData = data {
                 let product = try decode.decode(ProductDetailAPIModel.self, from: mData)
                 completion(product)
@@ -70,7 +70,7 @@ class MockyAPI {
     
     func getProductRating(completion: @escaping ProductRatingHandler) {
         router.path = Paths.rating.rawValue
-        HTTPRequest.instance.request(route: router, completion: { data, response, error in
+        HTTPRequest.instance.request(route: router, completion: { data, _, _ in
             if let decode = self.decoder, let mData = data {
                 let rating = try decode.decode(RatingAPIModel.self, from: mData)
                 completion(rating)
@@ -92,7 +92,7 @@ class MockyAPI {
     
     private func getSimpleProducts(path: Paths, completion: @escaping ProductsSimpleHandler) {
         router.path = path.rawValue
-        HTTPRequest.instance.request(route: router, completion: { data, response, error in
+        HTTPRequest.instance.request(route: router, completion: { data, _, _ in
             if let decode = self.decoder, let mData = data {
                 let products = try decode.decode([ProductSimpleAPIModel].self, from: mData)
                 completion(products)

@@ -9,11 +9,11 @@
 import Foundation
 
 struct PriceEntity {
-    var paymentPlan: String = ""
-    var installmentsValue: Double = 0
-    var maxInstallmentsCount: Int = 0
-    var currentPrice: Double = 0
-    var previousPrice: Double = 0
-    var discountPercent: Double = 0
+    var paymentPlan: String? = ""
+    var installmentsValue: Double? = 0
+    var maxInstallmentsCount: Int? = 0
+    var currentPrice: Double? = 0
+    var previousPrice: Double? = 0
+    var discountPercent: Double? = 0
     var discountPaymentMethod: PaymentMethodEntity?
 }

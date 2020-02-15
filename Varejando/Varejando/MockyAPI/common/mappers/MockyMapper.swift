@@ -21,21 +21,27 @@ public class MockyMapper {
     
     static func parse(from product: ProductAPIModel) -> ProductEntity {
         
-        var price: PriceEntity? = nil
+        var price: PriceEntity?
         if let mPrice = product.price {
             price = parse(from: mPrice)
         }
-        return ProductEntity(id: product.id, sku: product.sku, name: product.name, available: product.available, description: product.description, image: product.image, rating: product.rating, price: price)
+        return ProductEntity(id: product.id, sku: product.sku,
+                             name: product.name, available: product.available,
+                             description: product.description, image: product.image,
+                             rating: product.rating, price: price)
     }
     
     static func parse(from price: PriceAPIModel) -> PriceEntity {
-        
-        var discountPaymentMethod: PaymentMethodEntity? = nil
+
+        var discountPaymentMethod: PaymentMethodEntity?
         if let mDiscount = price.discountPaymentMethod {
             discountPaymentMethod = parse(from: mDiscount)
         }
         
-        return PriceEntity(paymentPlan: price.paymentPlan ?? "", installmentsValue: price.installmentsValue, maxInstallmentsCount: price.maxInstallmentsCount, currentPrice: price.currentPrice, previousPrice: price.previousPrice, discountPercent: price.discountPercent, discountPaymentMethod: discountPaymentMethod)
+        return PriceEntity(paymentPlan: price.paymentPlan, installmentsValue: price.installmentsValue,
+                           maxInstallmentsCount: price.maxInstallmentsCount, currentPrice: price.currentPrice,
+                           previousPrice: price.previousPrice, discountPercent: price.discountPercent,
+                           discountPaymentMethod: discountPaymentMethod)
         
     }
     
@@ -63,7 +69,11 @@ public class MockyMapper {
             model = parse(from: mModel)
         }
         
-        return ProductDetailEntity(id: product.id, name: product.name, description: product.description, withdrawInStore: product.withdrawInStore, categories: categories, moreInformations: moreInformations, brand: brand, model: model, video: product.video)
+        return ProductDetailEntity(id: product.id, name: product.name,
+                                   description: product.description,
+                                   withdrawInStore: product.withdrawInStore,
+                                   categories: categories, moreInformations: moreInformations,
+                                   brand: brand, model: model, video: product.video)
         
     }
     
@@ -89,15 +99,17 @@ public class MockyMapper {
                 services.append(parse(from: service))
             })
         }
-        var price: PriceEntity? = nil
+        var price: PriceEntity?
         if let mPrice = product.price {
             price = parse(from: mPrice)
         }
-        var marketplace: MarketplaceEntity? = nil
+        var marketplace: MarketplaceEntity?
         if let mMarketplace = product.marketplace {
             marketplace = parse(from: mMarketplace)
         }
-        return ProductModelEntity(sku: product.sku, name: product.name, available: product.available, marketplace: marketplace, price: price, images: images, services: services)
+        return ProductModelEntity(sku: product.sku, name: product.name,
+                                  available: product.available, marketplace: marketplace,
+                                  price: price, images: images, services: services)
     }
     
     static func parse(from marketplace: MarketplaceAPIModel) -> MarketplaceEntity {
@@ -108,19 +120,25 @@ public class MockyMapper {
             })
         }
         
-        var shopkeeperefault: ShopkeeperEntity? = nil
+        var shopkeeperefault: ShopkeeperEntity?
         if let mShopkeeper = marketplace.shopkeeperDefault {
             shopkeeperefault = parse(from: mShopkeeper)
         }
-        return MarketplaceEntity(biggestPrice: marketplace.biggestPrice, lowestPrice: marketplace.lowestPrice, shopkeeperDefault: shopkeeperefault, featuredShopkeepers: featuredShopkeepers)
+        return MarketplaceEntity(biggestPrice: marketplace.biggestPrice,
+                                 lowestPrice: marketplace.lowestPrice,
+                                 shopkeeperDefault: shopkeeperefault, featuredShopkeepers: featuredShopkeepers)
     }
     
     static func parse(from shopkeeper: ShopkeeperAPIModel) -> ShopkeeperEntity {
-        return ShopkeeperEntity(id: shopkeeper.id, name: shopkeeper.name, price: shopkeeper.price, quicklyWithdraw: shopkeeper.quicklyWithdraw, buyOnline: shopkeeper.buyOnline, elected: shopkeeper.elected)
+        return ShopkeeperEntity(id: shopkeeper.id, name: shopkeeper.name,
+                                price: shopkeeper.price, quicklyWithdraw: shopkeeper.quicklyWithdraw,
+                                buyOnline: shopkeeper.buyOnline, elected: shopkeeper.elected)
     }
     
     static func parse(from service: ServicesAPIModel) -> ServicesEntity {
-        return ServicesEntity(name: service.name, sku: service.sku, idShopkeeper: service.idShopkeeper, price: service.price, installment: service.installment, type: service.type)
+        return ServicesEntity(name: service.name, sku: service.sku,
+                              idShopkeeper: service.idShopkeeper, price: service.price,
+                              installment: service.installment, type: service.type)
     }
     
     static func parse(from image: ProductImagesAPIModel) -> ImageEntity {
@@ -136,7 +154,9 @@ public class MockyMapper {
     }
     
     static func parse(from paymentMethod: PaymentMethodAPIModel) -> PaymentMethodEntity {
-        return PaymentMethodEntity(price: paymentMethod.price, hasDiscount: paymentMethod.hasDiscount, description: paymentMethod.description, discountPercent: paymentMethod.discountPercent)
+        return PaymentMethodEntity(price: paymentMethod.price, hasDiscount: paymentMethod.hasDiscount,
+                                   description: paymentMethod.description,
+                                   discountPercent: paymentMethod.discountPercent)
     }
     
     static func parse(from information: InformationAPIModel) -> InformationEntity {
@@ -171,7 +191,13 @@ public class MockyMapper {
             })
         }
         
-        return OpinionEntity(client: opinion.client, date: opinion.date, comment: opinion.comment, note: opinion.note, title: opinion.title, generalAvaliation: opinion.generalAvaliation, stateAvaliation: opinion.stateAvaliation, like: opinion.like, dislike: opinion.dislike, mediaGalery: mediaGalery, idReview: opinion.idReview, descriptionNote: opinion.descriptionNote, cityAvaliation: opinion.cityAvaliation)
+        return OpinionEntity(client: opinion.client, date: opinion.date,
+                             comment: opinion.comment, note: opinion.note,
+                             title: opinion.title, generalAvaliation: opinion.generalAvaliation,
+                             stateAvaliation: opinion.stateAvaliation, like: opinion.like,
+                             dislike: opinion.dislike, mediaGalery: mediaGalery,
+                             idReview: opinion.idReview, descriptionNote: opinion.descriptionNote,
+                             cityAvaliation: opinion.cityAvaliation)
     }
     
     static func parse(from media: MediaGaleryAPIModel) -> MediaGaleryEnity {
@@ -179,6 +205,9 @@ public class MockyMapper {
     }
     
     static func parse(from product: ProductSimpleAPIModel) -> ProductSimpleEntity {
-        return ProductSimpleEntity(id: product.id, sku: product.sku, name: product.name, image: product.image, currentPrice: product.currentPrice, previousPrice: product.previousPrice, purchasePercent: product.purchasePercent, installment: product.installment)
+        return ProductSimpleEntity(id: product.id, sku: product.sku, name: product.name,
+                                   image: product.image, currentPrice: product.currentPrice,
+                                   previousPrice: product.previousPrice, purchasePercent: product.purchasePercent,
+                                   installment: product.installment)
     }
 }

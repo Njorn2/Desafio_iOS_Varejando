@@ -21,7 +21,7 @@ class HTTPRequest: NSObject, HTTPRouter {
     
     private var task: URLSessionTask?
     
-    private override init(){}
+    private override init() {}
     
     func request(route: EndPoint, completion: @escaping HTTPRouterCompletion) {
         do {
@@ -58,7 +58,8 @@ class HTTPRequest: NSObject, HTTPRouter {
      @field url - parametro necessário para criar o objeto, deve ser uma URL válida.
      */
     private func buildRequest(route: EndPoint) throws -> URLRequest {
-        var request = URLRequest(url: route.baseURL.appendingPathComponent(route.path), cachePolicy: .reloadIgnoringLocalCacheData,
+        var request = URLRequest(url: route.baseURL.appendingPathComponent(route.path),
+                                 cachePolicy: .reloadIgnoringLocalCacheData,
                                  timeoutInterval: 30.0)
         request.httpMethod = route.httpMethod.rawValue
         
@@ -69,7 +70,8 @@ class HTTPRequest: NSObject, HTTPRouter {
             case let .requestParameters(bodyParameters: bodyParameters, urlParameters: urlParameters):
                 self.addHeader(headers: route.headers, request: &request)
                 try self.addParameters(bodyParameters: bodyParameters, urlParameters: urlParameters, request: &request)
-            case let .requestParametersAndHeaders(bodyParameters: bodyParameters, urlParameters: urlParameters, headers: addHeader):
+            case let .requestParametersAndHeaders(bodyParameters: bodyParameters,
+                                                  urlParameters: urlParameters, headers: addHeader):
                 self.addHeader(headers: addHeader, request: &request)
                 try self.addParameters(bodyParameters: bodyParameters, urlParameters: urlParameters, request: &request)
             }

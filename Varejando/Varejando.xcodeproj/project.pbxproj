@@ -618,6 +618,7 @@
 				69AB5C0623EFA6EC003050DD /* Sources */,
 				69AB5C0723EFA6EC003050DD /* Frameworks */,
 				69AB5C0823EFA6EC003050DD /* Resources */,
+				69949EDA23F7630600067493 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -775,6 +776,23 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VarejandoTests/Pods-VarejandoTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		69949EDA23F7630600067493 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
 		FA8CCCEDDEE067A8343281B1 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;

@@ -1,4 +1,3 @@
-
 //
 //  ProductsSimpleInteractorInput.swift
 //  Varejando

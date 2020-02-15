@@ -1,0 +1,16 @@
+excluded:
+  - Pods
+
+
+disabled_rules:
+  - trailing_whitespace
+  - function_body_length
+  - identifier_name
+  - unused_optional_binding
+
+line_length:
+  warning: 120
+  ignores_function_declarations: true
+  ignores_comments: true
+  ignores_interpolated_strings: true
+  ignores_urls: true
