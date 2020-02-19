@@ -37,6 +37,10 @@ class HTTPRequest: NSObject, HTTPRouter {
                     DispatchQueue.main.async {
                         try? completion(data, response, error)
                     }
+                } else {
+                    DispatchQueue.main.async {
+                        try? completion(nil, response, error)
+                    }
                 }
             }
             task?.resume()

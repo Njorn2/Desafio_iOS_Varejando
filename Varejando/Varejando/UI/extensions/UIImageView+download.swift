@@ -29,11 +29,25 @@ private struct ImageRouter: EndPoint {
     }
 }
 
+struct ImageError: Error {
+    var message: String?
+    
+    init(message: String?) {
+        self.message = message
+    }
+}
+
 extension UIImageView {
-    func download(url: String, done: (() -> Void)? = nil) {
+    func download(url: String, done: ((_ error: Error?) -> Void)? = nil) {
         var router = ImageRouter()
         router.imageURL = url
-        HTTPRequest.instance.request(route: router, completion: { data, response, _ in
+        HTTPRequest.instance.request(route: router, completion: { data, response, error in
+            if let error = error, let done = done {
+                done(error)
+            }
+            if let resp = response as? HTTPURLResponse, resp.statusCode >= 401, let done = done {
+                done(ImageError(message: "Image Not Found"))
+            }
             if let mimeType = response?.mimeType,
                 mimeType.hasPrefix("image"),
                 let data = data,
@@ -42,7 +56,7 @@ extension UIImageView {
                 self.image = image
                 
                 if let done = done {
-                    done()
+                    done(nil)
                 }
             }
         })

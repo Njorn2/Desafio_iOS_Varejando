@@ -13,6 +13,7 @@ class HTTPLog {
         let title = "\n -_-_-_-_-_- Output HTTPRequest -_-_-_-_-_- "
         let end = "\n -_-_-_-_-_- END HTTPRequest -_-_-_-_-_- "
         let jump = "\n"
+        let URLRequest = "URL Request: "
         let HTTPStatusCode = "HTTP Status Code: "
         var outPut = ""
         
@@ -28,6 +29,9 @@ class HTTPLog {
         outPut += jump
         
         if let resp = response as? HTTPURLResponse {
+            outPut += URLRequest
+            outPut += String(describing: resp.url)
+            outPut += jump
             outPut += HTTPStatusCode
             outPut += String(describing: resp.statusCode)
         }
