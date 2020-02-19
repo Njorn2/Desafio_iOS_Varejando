@@ -12,7 +12,7 @@ class WhoSawBoughtManager: ProductsSimpleManagerInput {
     var objects = [ProductSimpleAPIModel]()
     
     func getProducts(completion: @escaping ProductsSimpleHandler) {
-        MockyAPI.shared.getAlsoSaw(completion: { objects in
+        MockyAPI.shared.getAlsoSawBought(completion: { objects in
             self.objects = objects
             completion(objects)
         })
