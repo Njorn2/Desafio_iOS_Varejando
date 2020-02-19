@@ -45,7 +45,7 @@ public class RequestSpec: QuickSpec {
                 it("Response Success. Error must be Nil") {
                     
                     waitUntil(timeout: 30) { done in
-                        request.request(route: router, completion: { data, response, error in
+                        request.request(route: router, completion: { _, _, error in
                             expect(error).to(beNil())
                             done()
                         })
@@ -54,7 +54,7 @@ public class RequestSpec: QuickSpec {
                 it("Response Success. Response Data must not be Nil") {
                     
                     waitUntil(timeout: 30) { done in
-                        request.request(route: router, completion: { data, response, error in
+                        request.request(route: router, completion: { data, _, _ in
                             expect(data).toNot(beNil())
                             done()
                         })
@@ -63,7 +63,7 @@ public class RequestSpec: QuickSpec {
                 it("Response Success. Response must not be a Imagem") {
                     
                     waitUntil(timeout: 30) { done in
-                        request.request(route: router, completion: { data, response, error in
+                        request.request(route: router, completion: { _, response, _ in
                             var isImage = false
                             if let mimeType = response?.mimeType, mimeType.hasPrefix("image") {
                                 isImage = true
@@ -77,7 +77,7 @@ public class RequestSpec: QuickSpec {
                     router.url = "https://www.tibiawiki.com.br/"
                     router.urn = "images/7/75/Demon.gif"
                     waitUntil(timeout: 30) { done in
-                        request.request(route: router, completion: { data, response, error in
+                        request.request(route: router, completion: { _, response, _ in
                             var isImage = false
                             if let mimeType = response?.mimeType, mimeType.hasPrefix("image") {
                                 isImage = true

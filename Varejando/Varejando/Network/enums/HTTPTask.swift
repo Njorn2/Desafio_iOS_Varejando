@@ -27,7 +27,8 @@ public enum HTTPTask: Equatable {
         case let (.requestParametersAndHeaders(bodyParameters: lhsBody, urlParameters: lhsURL, headers: lhsHeader),
                   .requestParametersAndHeaders(bodyParameters: rhsBody, urlParameters: rhsURL, headers: rhsHeader)
             ):
-            return ((lhsBody?.description == rhsBody?.description) && (lhsURL?.description == rhsURL?.description) && (lhsHeader?.description == rhsHeader?.description))
+            return ((lhsBody?.description == rhsBody?.description) &&
+                (lhsURL?.description == rhsURL?.description) && (lhsHeader?.description == rhsHeader?.description))
         default:
             return false
         }

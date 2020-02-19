@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ProductsSimpleInteractorBuilder {
+class WhoSawAlsoSawInteractorBuilder {
     static func make(manager: ProductsSimpleManagerInput) -> WhoSawAlsoSawInteractor {
         
         return WhoSawAlsoSawInteractor(manager: manager)

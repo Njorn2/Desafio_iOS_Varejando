@@ -16,6 +16,7 @@ struct ProductSimpleAPIModel: Codable {
     var currentPrice: Double = 0
     var previousPrice: Double =  0
     var purchasePercent: Double = 0
+    var rating: Double?
     var installment: String?
     
     enum CodingKeys: String, CodingKey {
@@ -26,6 +27,7 @@ struct ProductSimpleAPIModel: Codable {
         case currentPrice = "precoAtual"
         case previousPrice = "precoAnterior"
         case purchasePercent = "percentualCompra"
+        case rating = "classificacao"
         case installment = "parcelamento"
     }
 }

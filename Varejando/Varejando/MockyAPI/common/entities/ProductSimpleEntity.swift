@@ -16,5 +16,6 @@ struct ProductSimpleEntity {
     var currentPrice: Double = 0
     var previousPrice: Double =  0
     var purchasePercent: Double = 0
+    var rating: Double? = 0
     var installment: String?
 }
