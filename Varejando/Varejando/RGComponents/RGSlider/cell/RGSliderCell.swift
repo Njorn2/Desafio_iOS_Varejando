@@ -14,7 +14,11 @@ class RGSliderCell: UICollectionViewCell {
         didSet {
             if self.image != nil, let url = self.urlImage, !url.isEmpty {
                 self.image.presentActivity()
-                self.image.download(url: url, done: {
+                self.image.download(url: url, done: { error in
+                    if let error = error {
+                        print("Dowload Image Error: " + error.localizedDescription)
+                        self.image.image = UIImage(systemName: "cloud.bolt.fill")
+                    }
                     self.image.stopActivity()
                     self.layoutIfNeeded()
                     self.reloadInputViews()
