@@ -1,5 +1,5 @@
 //
-//  MockyProductsList.swift
+//  MockyProductsDetails.swift
 //  VarejandoTests
 //
 //  Created by Ruan Gustavo de Oliveira on 13/02/20.
@@ -11,13 +11,13 @@ import Quick
 import Nimble
 @testable import Varejando
 
-class MockyProductsList: QuickSpec {
+class MockyProductsDetailsSpec: QuickSpec {
     var done: (() -> Void)?
     override func spec() {
-        describe("Test Products List Interactor") {
-            context("Requesting List of Products") {
-                it("Listing Products") {
-                    let interactor = ProductsListInteractorBuilder.make(manager: ProductsListManager())
+        describe("Test Products Details Interactor") {
+            context("Requesting Deatails of Products") {
+                it("Products Details ") {
+                    let interactor = ProductsDetailInteractorBuilder.make(manager: ProductDetailManager())
                     interactor.output = self
                     waitUntil(timeout: 30) { done in
                         interactor.fetch()
@@ -29,12 +29,10 @@ class MockyProductsList: QuickSpec {
     }
 }
 
-extension MockyProductsList: ProductsListInteractorOutput {
-    func fetched(products: ProductsEntity) {
+extension MockyProductsDetailsSpec: ProductDetailInteractorOutput {
+    func fetched(products: ProductDetailEntity) {
         expect(products).toNot(beNil())
-        expect(products).to(beAKindOf(ProductsEntity.self))
-        expect(products.count > 0).to(beTrue())
-        expect(products.products?.isEmpty).toNot(beTrue())
+        expect(products).to(beAKindOf(ProductDetailEntity.self))
         if let mDone = self.done {
             mDone()
         }

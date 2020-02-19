@@ -1,15 +1,18 @@
 //
-//  ProductSimpleInteractor.swift
+//  BuyTogetherInteractor.swift
 //  Varejando
 //
-//  Created by Ruan Gustavo de Oliveira on 13/02/20.
+//  Created by Ruan Gustavo de Oliveira on 19/02/20.
 //  Copyright © 2020 Ruan Gustavo de Oliveira. All rights reserved.
 //
 
 import Foundation
 
-class WhoSawAlsoSawInteractor: ProductsSimpleInteractorInput {
-    weak var output: ProductsSimpleInteractorOutput?
+protocol BuyTogetherOutput: ProductsSimpleInteractorOutput {
+}
+
+class BuyTogetherInteractor: ProductsSimpleInteractorInput {
+    weak var output: BuyTogetherOutput?
     var manager: ProductsSimpleManagerInput
     
     var products = [ProductSimpleEntity]()

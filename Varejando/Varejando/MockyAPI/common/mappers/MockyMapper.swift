@@ -205,9 +205,14 @@ public class MockyMapper {
     }
     
     static func parse(from product: ProductSimpleAPIModel) -> ProductSimpleEntity {
-        return ProductSimpleEntity(id: product.id, sku: product.sku, name: product.name,
-                                   image: product.image, currentPrice: product.currentPrice,
-                                   previousPrice: product.previousPrice, purchasePercent: product.purchasePercent,
+        return ProductSimpleEntity(id: product.id,
+                                   sku: product.sku,
+                                   name: product.name,
+                                   image: product.image,
+                                   currentPrice: product.currentPrice,
+                                   previousPrice: product.previousPrice,
+                                   purchasePercent: product.purchasePercent,
+                                   rating: product.rating,
                                    installment: product.installment)
     }
 }

@@ -15,6 +15,6 @@ struct ProductEntity {
     var available: Bool? = false
     var description: String? = ""
     var image: String? = ""
-    var rating: Int? = 0
+    var rating: Double? = 0
     var price: PriceEntity?
 }
