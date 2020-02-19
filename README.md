@@ -37,3 +37,6 @@ Este aplicativo contém códigos de HTTP Request e criação de componentes de t
 
 ### Tempo de Implementação
 * Como o tempo para atuar foi pouco durante os dias/noites, e foi uma atuação com calma e zelo, foram aproximadanete uma semana e meia.
+
+### Pontos Interessantes
+* Ao londo do desenvolvimento, vemos que mesmo se perdendo um pouco da arquitetura proposta, durante o desenvolvimento dos componentes visuais, teve foi-se obtendo uma melhor forma de implement-los, abrindo um leque para melhorar seus códigos em updates futuros.
