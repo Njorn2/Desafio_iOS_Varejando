@@ -29,7 +29,7 @@ Este aplicativo contém códigos de HTTP Request e criação de componentes de t
 
 
 ### Solução
-* Ao Implementar o modulo HTTPRequest & MockyAPI, sendo eles o core do Projeto, vemos que os modolos ficaram bem independendes, podem ser passado para outros projetos de forma simples e com o minimo de implementação.
+* Ao Implementar o modulo HTTPRequest & MockyAPI, sendo eles o core do Projeto, vemos que os modolos ficaram bem independendes, podendo ser passados para outros projetos de forma simples e com o minimo de correções.
 
 ### Problemas e Dificuldades
 * Faz muito tempo que não trabalho com Front-End (UI/UX), atuando mais com Back-End criando Frameworks em COCOAPODS.
