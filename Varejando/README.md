@@ -9,7 +9,7 @@ Este aplicativo contém códigos de HTTP Request e criação de componentes de t
 * XCode
 
 ### Como executar
-* Abra o projeto Varejando.xcworkspace no XCode, selecione um emulador ou iPhone com iOS 11+
+* Abra o projeto Varejando.xcworkspace no XCode, selecione um Simulador e/ou iPhone fisico com iOS 11+
 * Execute o projeto e espere o build e o attach no dispositvo.
 * Caso tenha alguma dificuldade para executar o projeto, vá ao terminal e execute o comando ```pod install``` na pasta do projeto, onde está o arquivo ```Podfile```
 
