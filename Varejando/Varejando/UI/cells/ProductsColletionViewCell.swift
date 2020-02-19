@@ -92,7 +92,11 @@ class ProductsColletionViewCell: UICollectionViewCell {
         self.rating.setup()
         
         // ImageView
-        self.image.download(url: display.image ?? "")
+        self.image.download(url: display.image ?? "", done: { error in
+            if error != nil {
+                self.image.image = UIImage(named: "storm")
+            }
+        })
         image.contentMode = .center
         
         // Label Previous Price
