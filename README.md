@@ -40,3 +40,6 @@ Este aplicativo contém códigos de HTTP Request e criação de componentes de t
 
 ### Pontos Interessantes
 * Ao londo do desenvolvimento, vemos que mesmo se perdendo um pouco da arquitetura proposta, durante o desenvolvimento dos componentes visuais, teve foi-se obtendo uma melhor forma de implement-los, abrindo um leque para melhorar seus códigos em updates futuros.
+
+### App Usage
+![Alt Text](VarejandoAPPScreen.gif)
